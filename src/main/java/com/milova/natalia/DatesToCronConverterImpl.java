@@ -37,7 +37,9 @@ public class DatesToCronConverterImpl implements DatesToCronConverter {
         return new Info(this.getClass().getSimpleName(), this.getClass().getPackageName()).toString();
     }
 
-    private List<LocalDateTime> convertToLocalDateTimes(List<String> dates){
+    private List<LocalDateTime> convertToLocalDateTimes(List<String> dates) throws DatesToCronConvertException {
+        if (dates.isEmpty())
+            throw new DatesToCronConvertException();
         return dates.stream().map(LocalDateTime::parse).sorted().collect(Collectors.toList());
     }
 }
