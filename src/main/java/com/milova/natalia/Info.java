@@ -1,7 +1,5 @@
 package com.milova.natalia;
 
-import jdk.jshell.spi.ExecutionEnv;
-
 public class Info {
     private String implementationClassName;
     private String packageName;
